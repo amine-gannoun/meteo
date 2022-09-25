@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E0M-CX-FM4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Météo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ListeVillesVC" customModule="Meteo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veillez ajouter une ville !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkA-nn-fFF">
+                                <rect key="frame" x="20" y="440" width="374" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DRp-mg-rvh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" systemColor="systemGray4Color"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DRp-mg-rvh" secondAttribute="trailing" id="5Sm-Ph-D6V"/>
+                            <constraint firstItem="DRp-mg-rvh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6le-Zu-etm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KkA-nn-fFF" secondAttribute="trailing" constant="20" id="8Aj-Ji-nbz"/>
+                            <constraint firstItem="DRp-mg-rvh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oFv-tY-JQw"/>
+                            <constraint firstItem="KkA-nn-fFF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q5g-Hd-U7z"/>
+                            <constraint firstItem="KkA-nn-fFF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rBb-Ef-o7X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DRp-mg-rvh" secondAttribute="bottom" id="spz-7U-epx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Météo" id="MZy-fp-ApK">
+                        <barButtonItem key="rightBarButtonItem" image="newPosition" style="plain" id="IDN-dZ-f2Q">
+                            <color key="tintColor" systemColor="systemBlueColor"/>
+                            <connections>
+                                <action selector="ajouterVilleAction:" destination="BYZ-38-t0r" id="cm7-YA-cvF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="listeVillesTV" destination="DRp-mg-rvh" id="LHc-5O-urO"/>
+                        <outlet property="pasDeVillesLabel" destination="KkA-nn-fFF" id="vWy-6q-hoV"/>
+                        <segue destination="gSS-hU-UHR" kind="show" identifier="AjouterVilleSegue" id="qK5-Pe-jTM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="81.696428571428569"/>
+        </scene>
+        <!--Ajouter une ville-->
+        <scene sceneID="nDs-QW-Lik">
+            <objects>
+                <viewController id="gSS-hU-UHR" customClass="AjouterVilleVC" customModule="Meteo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kIl-Av-ZNq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uq-7s-JYB">
+                                <rect key="frame" x="20" y="797" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0CK-P9-3fJ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Ajouter">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ajouterVilleAction:" destination="gSS-hU-UHR" eventType="touchUpInside" id="MDs-s0-Y0e"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IZr-Ud-iVJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="689"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MH6-4F-H7H"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MH6-4F-H7H" firstAttribute="trailing" secondItem="IZr-Ud-iVJ" secondAttribute="trailing" id="HpV-qG-Kub"/>
+                            <constraint firstItem="IZr-Ud-iVJ" firstAttribute="leading" secondItem="MH6-4F-H7H" secondAttribute="leading" id="KCS-oS-BXX"/>
+                            <constraint firstItem="7uq-7s-JYB" firstAttribute="leading" secondItem="MH6-4F-H7H" secondAttribute="leading" constant="20" id="MxC-ok-VUb"/>
+                            <constraint firstItem="IZr-Ud-iVJ" firstAttribute="top" secondItem="MH6-4F-H7H" secondAttribute="top" id="OhY-S7-zDr"/>
+                            <constraint firstItem="7uq-7s-JYB" firstAttribute="top" secondItem="IZr-Ud-iVJ" secondAttribute="bottom" constant="20" id="UQj-fD-Bfl"/>
+                            <constraint firstItem="MH6-4F-H7H" firstAttribute="trailing" secondItem="7uq-7s-JYB" secondAttribute="trailing" constant="20" id="adh-4K-RVo"/>
+                            <constraint firstItem="MH6-4F-H7H" firstAttribute="bottom" secondItem="7uq-7s-JYB" secondAttribute="bottom" constant="25" id="ned-FR-ucL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ajouter une ville" id="u4s-yW-8vo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="c9N-03-hUu">
+                            <connections>
+                                <action selector="chercherVilleAction:" destination="gSS-hU-UHR" id="2Ti-tm-iaq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ajouterButton" destination="7uq-7s-JYB" id="Us4-U0-x7s"/>
+                        <outlet property="mapView" destination="IZr-Ud-iVJ" id="18P-wd-YHo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HdJ-OV-AL0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="82"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="24M-ja-yym">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E0M-CX-FM4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rwh-zC-rKE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3JR-wl-SQF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8G-uB-fd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="newPosition" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
