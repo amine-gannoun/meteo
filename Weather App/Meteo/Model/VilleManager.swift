@@ -27,11 +27,11 @@ class VilleManager: NSObject {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let entity = NSEntityDescription.entity(forEntityName: "VilleEntity", in: context)!
-        let homeVideo = NSManagedObject(entity: entity, insertInto: context)
+        let villeEntity = NSManagedObject(entity: entity, insertInto: context)
         
-        homeVideo.setValue(ville.nom, forKey: "nom")
-        homeVideo.setValue(ville.latitude, forKey: "lat")
-        homeVideo.setValue(ville.longitude, forKey: "long")
+        villeEntity.setValue(ville.nom, forKey: "nom")
+        villeEntity.setValue(ville.latitude, forKey: "lat")
+        villeEntity.setValue(ville.longitude, forKey: "long")
         
         do {
             try context.save()
@@ -41,6 +41,31 @@ class VilleManager: NSObject {
         
     }
     
+    func deleteVilleFromCash(atIndex index: Int){
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "VilleEntity")
+        
+        do {
+            let villesFromCash = try managedContext.fetch(fetchRequest)
+            
+            managedContext.delete(villesFromCash[index])
+            
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
+                        
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
     
     // MARK: - Read Data
     func fetchAllVilles() -> [Ville] {

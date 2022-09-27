@@ -56,6 +56,11 @@ class ListeVillesVC: UIViewController {
         if segue.identifier == "AjouterVilleSegue" {
             let ajouterVilleVC : AjouterVilleVC = segue.destination as! AjouterVilleVC
             ajouterVilleVC.delegate = self
+        }else if segue.identifier == "showMeteoDetails" {
+            let selectedVilleIndex : Int = sender as! Int
+            let selectedVille : Ville = villes[selectedVilleIndex]
+            let meteoDetailVC : MeteoDetailsVC = segue.destination as! MeteoDetailsVC
+            meteoDetailVC.currentVille = selectedVille
         }
     }
 }
@@ -76,6 +81,22 @@ extension ListeVillesVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showMeteoDetails", sender: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Suppression d'une Ville
+        if editingStyle == .delete {
+            VilleManager.shared.deleteVilleFromCash(atIndex: indexPath.row)
+            getVilles()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

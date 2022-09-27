@@ -53,6 +53,7 @@
                         <outlet property="listeVillesTV" destination="DRp-mg-rvh" id="LHc-5O-urO"/>
                         <outlet property="pasDeVillesLabel" destination="KkA-nn-fFF" id="vWy-6q-hoV"/>
                         <segue destination="gSS-hU-UHR" kind="show" identifier="AjouterVilleSegue" id="qK5-Pe-jTM"/>
+                        <segue destination="P5D-9m-7Tt" kind="show" identifier="showMeteoDetails" id="hga-Uo-P0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -118,6 +119,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdJ-OV-AL0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1980" y="82"/>
+        </scene>
+        <!--Meteo DetailsVC-->
+        <scene sceneID="oq8-dF-snR">
+            <objects>
+                <viewController id="P5D-9m-7Tt" customClass="MeteoDetailsVC" customModule="Meteo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ToE-Em-bwd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HGk-0O-apC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OjE-WQ-1gd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgl-nw-pBQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="783"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="24M-ja-yym">

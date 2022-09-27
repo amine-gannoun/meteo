@@ -60,6 +60,7 @@ class AjouterVilleVC: UIViewController {
     
 }
 
+//MARK: - Search Bar delegate
 extension AjouterVilleVC : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)

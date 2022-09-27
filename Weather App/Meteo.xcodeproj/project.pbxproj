@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371AD96D28E301E600DF3946 /* WeatherAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AD96B28E2FFCA00DF3946 /* WeatherAPI.framework */; platformFilter = ios; };
+		371AD96E28E301E600DF3946 /* WeatherAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371AD96B28E2FFCA00DF3946 /* WeatherAPI.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		371AD97128E3200200DF3946 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371AD97028E3200200DF3946 /* WeatherResponse.swift */; };
 		372593C228DF90E1001E264D /* Ville.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372593C128DF90E0001E264D /* Ville.swift */; };
+		3745F96B28E2435800F9DEF2 /* MeteoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3745F96A28E2435800F9DEF2 /* MeteoDetailsVC.swift */; };
 		376DD8A028DEE0CB00F3C1B7 /* VilleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 376DD89E28DEE0CB00F3C1B7 /* VilleCell.xib */; };
 		376DD8A128DEE0CB00F3C1B7 /* VilleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DD89F28DEE0CB00F3C1B7 /* VilleCell.swift */; };
 		376DD8A328DEEFF300F3C1B7 /* AjouterVilleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DD8A228DEEFF300F3C1B7 /* AjouterVilleVC.swift */; };
@@ -41,8 +45,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		371AD96F28E301E700DF3946 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				371AD96E28E301E600DF3946 /* WeatherAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		371AD96B28E2FFCA00DF3946 /* WeatherAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WeatherAPI.framework; sourceTree = "<group>"; };
+		371AD97028E3200200DF3946 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		372593C128DF90E0001E264D /* Ville.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ville.swift; sourceTree = "<group>"; };
+		3745F96A28E2435800F9DEF2 /* MeteoDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoDetailsVC.swift; sourceTree = "<group>"; };
 		376DD89E28DEE0CB00F3C1B7 /* VilleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VilleCell.xib; sourceTree = "<group>"; };
 		376DD89F28DEE0CB00F3C1B7 /* VilleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilleCell.swift; sourceTree = "<group>"; };
 		376DD8A228DEEFF300F3C1B7 /* AjouterVilleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjouterVilleVC.swift; sourceTree = "<group>"; };
@@ -68,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371AD96D28E301E600DF3946 /* WeatherAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371AD96A28E2FFBA00DF3946 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				371AD96B28E2FFCA00DF3946 /* WeatherAPI.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		378939CB28DE0E9300BF7E58 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +141,7 @@
 		378939D628DE0E9300BF7E58 /* Meteo */ = {
 			isa = PBXGroup;
 			children = (
+				371AD96A28E2FFBA00DF3946 /* Frameworks */,
 				37893A0C28DE112900BF7E58 /* Controller */,
 				37893A0B28DE112200BF7E58 /* View */,
 				37893A0A28DE111800BF7E58 /* Model */,
@@ -145,6 +176,7 @@
 			children = (
 				372593C128DF90E0001E264D /* Ville.swift */,
 				37B87CD528DFA54700D85466 /* VilleManager.swift */,
+				371AD97028E3200200DF3946 /* WeatherResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +196,7 @@
 			children = (
 				378939DB28DE0E9300BF7E58 /* ListeVillesVC.swift */,
 				376DD8A228DEEFF300F3C1B7 /* AjouterVilleVC.swift */,
+				3745F96A28E2435800F9DEF2 /* MeteoDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,6 +220,7 @@
 				378939D028DE0E9300BF7E58 /* Sources */,
 				378939D128DE0E9300BF7E58 /* Frameworks */,
 				378939D228DE0E9300BF7E58 /* Resources */,
+				371AD96F28E301E700DF3946 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,8 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				378939E228DE0E9300BF7E58 /* Meteo.xcdatamodeld in Sources */,
+				371AD97128E3200200DF3946 /* WeatherResponse.swift in Sources */,
 				376DD8A128DEE0CB00F3C1B7 /* VilleCell.swift in Sources */,
 				376DD8A328DEEFF300F3C1B7 /* AjouterVilleVC.swift in Sources */,
+				3745F96B28E2435800F9DEF2 /* MeteoDetailsVC.swift in Sources */,
 				378939DC28DE0E9300BF7E58 /* ListeVillesVC.swift in Sources */,
 				37B87CD628DFA54800D85466 /* VilleManager.swift in Sources */,
 				378939D828DE0E9300BF7E58 /* AppDelegate.swift in Sources */,
@@ -496,6 +532,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BHMF728PZC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Meteo/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Meteo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -509,7 +549,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.acoba.JarvisVideo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amine.Meteo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -525,6 +565,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BHMF728PZC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Meteo/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Meteo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -538,7 +582,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.acoba.JarvisVideo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amine.Meteo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
