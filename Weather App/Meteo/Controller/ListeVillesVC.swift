@@ -26,7 +26,8 @@ class ListeVillesVC: UIViewController {
     }
     
     func setUpUIOutlets() {
-        
+        title = "Villes"
+        view.backgroundColor = UIColor(displayP3Red: 139.0/255.0, green: 184.0/255.0, blue: 246.0/255.0, alpha: 1)
         listeVillesTV.delegate = self
         listeVillesTV.dataSource = self
         listeVillesTV.register(UINib(nibName: "VilleCell", bundle: nil), forCellReuseIdentifier: "VilleCell")
@@ -89,6 +90,10 @@ extension ListeVillesVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Supprimer"
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

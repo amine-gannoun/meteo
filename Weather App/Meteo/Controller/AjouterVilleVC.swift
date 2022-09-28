@@ -36,8 +36,11 @@ class AjouterVilleVC: UIViewController {
     }
     
     func setUpUiOutlets() {
+        view.backgroundColor = UIColor(displayP3Red: 139.0/255.0, green: 184.0/255.0, blue: 246.0/255.0, alpha: 1)
         title = "Chercher une ville"
         updateAjouterButton()
+        mapView.layer.masksToBounds = true
+        mapView.layer.cornerRadius = 10.0
     }
     
     func updateAjouterButton(){

@@ -21,7 +21,7 @@ public class WeatherManager: NSObject {
     
     public func getMeteoInformations(latitude : Double, longitude : Double, completion : @escaping((Data) -> ())) {
         
-        let url : URL = URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=\(latitude)&lon=\(longitude)&appid=\(WeatherAppID)")!
+        let url : URL = URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=\(latitude)&lon=\(longitude)&appid=\(WeatherAppID)&lang=fr&units=metric")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             
